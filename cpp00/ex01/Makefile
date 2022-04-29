@@ -1,6 +1,8 @@
 NAME	= phonebook
 
-SRCS	= main.cpp PhoneBook.hpp Contact.hpp
+SRCS	= main.cpp PhoneBook.cpp Contact.cpp
+
+HEADER	= PhoneBook.hpp Contact.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
@@ -15,9 +17,9 @@ all:		${NAME}
 .cpp.o:
 			@${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${HEADER}
 			@echo "$(shell tput bold)$(shell tput setaf 5)Compiling...$(shell tput sgr0)"
-			@${CC} ${OBJS} -o ${NAME}
+			@${CC} ${OBJS} -o ${NAME} ${HEADER}
 			@echo "$(shell tput bold)$(shell tput setaf 5)DONE$(shell tput sgr0)"
 
 clean:          
