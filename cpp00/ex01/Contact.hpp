@@ -15,6 +15,9 @@ private:
 public:
 	void	add_first_name(const std::string &input);
 	void	add_last_name(const std::string &input);
+	void	add_nickname(const std::string &input);
+	void	add_phone_number(const std::string &input);
+	void	add_darkest_secret(const std::string &input);
 };
 
 #endif
